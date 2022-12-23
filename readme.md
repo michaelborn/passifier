@@ -2,6 +2,8 @@
 
 A password strength checker based on [zxcvbn4j](https://github.com/nulab/zxcvbn4j).
 
+![Demo of pStrong showing "Time to crack: Centuries" on a registration form password field](pstrong-demo.png)
+
 ## Installation
 
 ```bash
