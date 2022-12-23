@@ -6,27 +6,27 @@
 component {
 
 	// Module Properties
-	this.title 				= "@MODULE_NAME@";
+	this.title 				= "pstrong";
 	this.author 			= "Ortus Solutions";
 	this.webURL 			= "https://www.ortussolutions.com";
-	this.description 		= "@MODULE_DESCRIPTION@";
+	this.description 		= "Password strength checker for ColdBox";
 	this.version 			= "@build.version@+@build.number@";
 
 	// Model Namespace
-	this.modelNamespace		= "@MODULE_SLUG@";
+	this.modelNamespace		= "pstrong";
 
 	// CF Mapping
-	this.cfmapping			= "@MODULE_SLUG@";
+	this.cfmapping			= "pstrong";
 
 	// Dependencies
-	this.dependencies 		= [];
+	this.dependencies = [ "cbjavaloader" ];
 
 	/**
 	 * Configure Module
 	 */
 	function configure(){
 		settings = {
-
+			libPath : modulePath & "/lib"
 		};
 	}
 
@@ -34,14 +34,12 @@ component {
 	 * Fired when the module is registered and activated.
 	 */
 	function onLoad(){
-
+		wireBox.getInstance( "loader@cbjavaloader" ).appendPaths( settings.libPath );
 	}
 
 	/**
 	 * Fired when the module is unregistered and unloaded
 	 */
-	function onUnload(){
-
-	}
+	function onUnload(){}
 
 }

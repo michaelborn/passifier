@@ -1,52 +1,80 @@
-# Ortus ColdBox Module Template
+# Pstrong
 
-This template can be used to create Ortus based ColdBox Modules.  To use, just click the `Use this Template` button in the github repository: https://github.com/coldbox-modules/module-template and run the setup task from where you cloned it.
+A password strength checker based on [zxcvbn4j](https://github.com/nulab/zxcvbn4j).
+
+## Installation
 
 ```bash
-box task run taskFile=build/setupTemplate
+box install pstrong
 ```
 
-The `setupTemplate` task will ask you for your module name, id and description and configure the template for you! Enjoy!
+## Configuration
 
-## Directory Structure
+No configuration as of yet. 😁
 
-The root of the module is the root of the repository. Add all the necessary files your module will need.
+## Usage
 
-* `.github/workflows` - These are the github actions to test and build the module via CI
-* `build` - This is the CommandBox task that builds the project.  Only modify if needed.  Most modules will never modify it. (Modify if needed)
-* `test-harness` - This is a ColdBox testing application, where you will add your testing files, specs etc.
-* `.cfformat.json` - A CFFormat using the Ortus Standards
-* `.cflintrc` - A CFLint configuration file according to Ortus Standards
-* `.editorconfig` - Smooth consistency between editors
-* `.gitattributes` - Git attributes
-* `.gitignore` - Basic ignores. Modify as needed.
-* `.markdownlint.json` - A linting file for markdown docs
-* `box.json` - The box.json for YOUR module.  Modify as needed.
-* `changelog.md` - A nice changelog tracking file
-* `ModuleConfig.cfc` - Your module's configuration. Modify as needed.
-* `readme.md` - Your module's readme. Modify as needed.
-* `server-xx@x.json` - A set of json files to configure the major engines your modules supports.
+Use `pStrong.measure( password )` to measure password complexity:
 
-## Test Harness
+```bash
+var strength = getInstance( "pStrong@pstrong" ).measure( "myBadPassword" );
+```
 
-The test harness is created to bootstrap your working module into the application `afterAspectsLoad`.  This is done in the `config/ColdBox.cfc`.  It includes some key features:
+You can then read complexity using a number of methods:
 
-* `config` - Modify as needed
-* `tests` - All your testing specs should go here.  Please notice the commented out ORM fixtures.  Enable them if your module requires ORM
-* `.cfconfig.json` - A prepared cfconfig json file so your engine data is consistent.  Modify as needed.
-* `.env.sample` - An environment property file sample.  Copy and create a `.env` if your app requires it.
+* `strength.getCrackTimeSeconds().getOfflineFastHashing1e10PerSecond()`
+* `strength.getCrackTimeDisplay().getOnlineNoThrottling10perSecond()`
+* `strength.getFeedback()`
 
+### Feedback
 
-## API Docs
+The Feedback object is acquired by running `pStrong.measure( "myBadPassword" ).getFeedback()`.
 
-The build task will take care of building API Docs using DocBox for you but **ONLY** for the `models` folder in your module.  If you want to document more then make sure you modify the `build/Build.cfc` task.
+* `feedback.getWarning()`
+* `feedback.getSuggestions()`
 
-## Github Actions Automation
+### CrackTimeSeconds
 
-The github actions will clone, test, package, deploy your module to ForgeBox and the Ortus S3 accounts for API Docs and Artifacts.  So please make sure the following environment variables are set in your repository. ** Please note that most of them are already defined at the org level **
+The CrackTimeSeconds object is acquired by running `pStrong.measure( "myBadPassword" ).getCrackTimeSeconds()`.
 
-* `FORGEBOX_TOKEN` - The Ortus ForgeBox API Token
-* `AWS_ACCESS_KEY` - The travis user S3 account
-* `AWS_ACCESS_SECRET` - The travis secret S3
+* `getOnlineThrottling100perHour()`
+* `getOnlineNoThrottling10perSecond()`
+* `getOfflineSlowHashing1e4perSecond()`
+* `getOfflineFastHashing1e10PerSecond()`
 
-> Please contact the admins in the `#infrastructure` channel for these credentials if needed
+### CrackTimeDisplay
+
+The CrackTimeDisplay object is acquired by running `pStrong.measure( "myBadPassword" ).getCrackTimeDisplay()`.
+
+* `getOnlineThrottling100perHour()`
+* `getOnlineNoThrottling10perSecond()`
+* `getOfflineSlowHashing1e4perSecond()`
+* `getOfflineFastHashing1e10PerSecond()`
+
+## Contributions
+
+## Thanks
+
+All original functionality courtesy of [zxcvbn4j](https://github.com/nulab/zxcvbn4j), a super awesome port of DropBox's [zxcvbn](https://github.com/dropbox/zxcvbn) library.
+
+## License
+
+Apache License, Version 2.0.
+
+> The ColdBox Websites, logo and content have a separate license and they are a separate entity.
+
+## The Good News
+
+> For all have sinned, and come short of the glory of God ([Romans 3:23](https://www.kingjamesbibleonline.org/Romans-3-23/))
+
+> But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us. ([Romans 5:8](https://www.kingjamesbibleonline.org/Romans-5-8))
+
+> That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved. ([Romans 10:9](https://www.kingjamesbibleonline.org/Romans-10-9/))
+
+## Repository
+
+Copyright 2022 (and on) - [Ortus Solutions](https://www.ortussolutions.com/)
+
+* [Homepage](https://github.com/coldbox-modules/cbmeilisearch)
+* [Issue Tracker](https://github.com/coldbox-modules/cbmeilisearch/issues)
+* [New BSD License](https://github.com/coldbox-modules/cbmeilisearch/blob/master/LICENSE.txt)
