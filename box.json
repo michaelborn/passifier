@@ -33,6 +33,7 @@
     "ignore":[
         "**/.*",
         "pstrong-demo.png",
+        "docs/",
         "test-harness",
         "/server*.json"
     ],
