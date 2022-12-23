@@ -6,17 +6,17 @@
 component {
 
 	// Module Properties
-	this.title 				= "pstrong";
-	this.author 			= "Ortus Solutions";
-	this.webURL 			= "https://www.ortussolutions.com";
-	this.description 		= "Password strength checker for ColdBox";
-	this.version 			= "@build.version@+@build.number@";
+	this.title       = "pstrong";
+	this.author      = "Ortus Solutions";
+	this.webURL      = "https://www.ortussolutions.com";
+	this.description = "Password strength checker for ColdBox";
+	this.version     = "@build.version@+@build.number@";
 
 	// Model Namespace
-	this.modelNamespace		= "pstrong";
+	this.modelNamespace = "pstrong";
 
 	// CF Mapping
-	this.cfmapping			= "pstrong";
+	this.cfmapping = "pstrong";
 
 	// Dependencies
 	this.dependencies = [ "cbjavaloader" ];
@@ -25,9 +25,7 @@ component {
 	 * Configure Module
 	 */
 	function configure(){
-		settings = {
-			libPath : modulePath & "/lib"
-		};
+		settings = { libPath : modulePath & "/lib" };
 	}
 
 	/**
@@ -40,6 +38,7 @@ component {
 	/**
 	 * Fired when the module is unregistered and unloaded
 	 */
-	function onUnload(){}
+	function onUnload(){
+	}
 
 }

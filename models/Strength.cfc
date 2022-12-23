@@ -1,4 +1,3 @@
-
 /**
  * # estimated guesses needed to crack password
     strength.guesses
@@ -63,102 +62,105 @@
 */
 component accessors="true" {
 
+	/**
+	 * Undocumented property
+	 */
+	property name="GuessesLog10" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="GuessesLog10" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="CalcTime" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="CalcTime" setter="false";
+	/**
+	 * Undocumented property
+	 */	;
+	property name="Guesses" setter="false";
 
-    /**
-     * Undocumented property
-     */;
-    property name="Guesses" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="CrackTimeSeconds" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="CrackTimeSeconds" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="CrackTimesDisplay" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="CrackTimesDisplay" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="Score" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="Score" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="Sequence" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="Sequence" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="Feedback" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="Feedback" setter="false";
+	/**
+	 * Undocumented property
+	 */
+	property name="Password" setter="false";
 
-    /**
-     * Undocumented property
-     */
-    property name="Password" setter="false";
+	/**
+	 * The original Strength object in its entirey, straight from the zxcvbn library.
+	 */
+	property
+		name  ="Strength"
+		type  ="component"
+		setter="false";
 
-    /**
-     * The original Strength object in its entirey, straight from the zxcvbn library.
-     */
-    property name="Strength" type="component" setter="false";
+	/**
+	 * Public constructor. Populates self from the provided Strength object.
+	 *
+	 * @strength The original Strength object in its entirey, straight from the zxcvbn library.
+	 */
+	public component function init( required any strength ){
+		variables.Strength = arguments.strength;
 
-    /**
-     * Public constructor. Populates self from the provided Strength object.
-     *
-     * @strength The original Strength object in its entirey, straight from the zxcvbn library.
-     */
-    public component function init( required any strength ){
-        variables.Strength = arguments.strength;
+		variables.GuessesLog10      = arguments.strength.getGuessesLog10();
+		variables.CalcTime          = arguments.strength.getCalcTime();
+		variables.Guesses           = arguments.strength.getGuesses();
+		variables.CrackTimeSeconds  = new CrackTimeSeconds( arguments.strength.getCrackTimeSeconds() );
+		variables.CrackTimesDisplay = new CrackTimesDisplay( arguments.strength.getCrackTimesDisplay() );
+		variables.Score             = arguments.strength.getScore();
+		variables.Sequence          = arguments.strength.getSequence();
+		variables.Feedback          = new Feedback( arguments.strength.getFeedback() );
+		variables.Password          = arguments.strength.getPassword();
 
-        variables.GuessesLog10 = arguments.strength.getGuessesLog10();
-        variables.CalcTime = arguments.strength.getCalcTime();
-        variables.Guesses = arguments.strength.getGuesses();
-        variables.CrackTimeSeconds = new CrackTimeSeconds( arguments.strength.getCrackTimeSeconds() );
-        variables.CrackTimesDisplay = new CrackTimesDisplay( arguments.strength.getCrackTimesDisplay() );
-        variables.Score = arguments.strength.getScore();
-        variables.Sequence = arguments.strength.getSequence();
-        variables.Feedback = new Feedback( arguments.strength.getFeedback() );
-        variables.Password = arguments.strength.getPassword();
+		return this;
+	}
 
-        return this;
-    }
+	// /**
+	//  * GETTERS
+	//  */
+	// public numeric function getGuessesLog10(){}
+	// public numeric function getCalcTime(){}
+	// public void function wipe(){}
+	// public numeric function getGuesses(){}
+	// public AttackTimes$CrackTimeSeconds	function getCrackTimeSeconds(){}
+	// public AttackTimes	function getCrackTimesDisplay(){}
+	// public integer function getScore(){}
+	// public any function getSequence(){}
+	// public Feedback	function getFeedback(){}
+	// public any function getPassword(){}
 
-    // /**
-    //  * GETTERS
-    //  */
-    // public numeric function getGuessesLog10(){}
-    // public numeric function getCalcTime(){}
-    // public void function wipe(){}
-    // public numeric function getGuesses(){}
-    // public AttackTimes$CrackTimeSeconds	function getCrackTimeSeconds(){}
-    // public AttackTimes	function getCrackTimesDisplay(){}
-    // public integer function getScore(){}
-    // public any function getSequence(){}
-    // public Feedback	function getFeedback(){}
-    // public any function getPassword(){}
+	// /**
+	//  * SETTERS
+	//  */
+	// public void function setGuesses( numeric value ){}
+	// public void function setGuessesLog10( numeric value ){}
+	// public void function setCalcTime( numeric value ){}
+	// public void function setScore( numeric value ){}
+	// public void function setSequence( ){}
+	// public void function setCrackTimeSeconds( AttackTimes ){}
+	// public void function setCrackTimesDisplay( AttackTimes ){}
+	// public void function setFeedback( Feedback ){}
+	// public void function setPassword( ){}
 
-    // /**
-    //  * SETTERS
-    //  */
-    // public void function setGuesses( numeric value ){}
-    // public void function setGuessesLog10( numeric value ){}
-    // public void function setCalcTime( numeric value ){}
-    // public void function setScore( numeric value ){}
-    // public void function setSequence( ){}
-    // public void function setCrackTimeSeconds( AttackTimes ){}
-    // public void function setCrackTimesDisplay( AttackTimes ){}
-    // public void function setFeedback( Feedback ){}
-    // public void function setPassword( ){}
 }

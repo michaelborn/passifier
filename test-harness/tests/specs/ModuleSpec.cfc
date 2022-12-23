@@ -17,7 +17,6 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="root" {
 		describe( "pStrong Module", function(){
 			beforeEach( function( currentSpec ){
 			} );
-
 		} );
 	}
 
