@@ -22,12 +22,8 @@ component {
 	public string function getWarning(){
 		return variables.warning;
 	}
-	public string function getWarning( string locale ){
-	}
 	public string function getSuggestions(){
 		return variables.suggestions;
-	}
-	public string function getSuggestions( string locale ){
 	}
 
 }

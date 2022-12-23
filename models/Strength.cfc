@@ -74,7 +74,7 @@ component accessors="true" {
 
 	/**
 	 * Undocumented property
-	 */	;
+	 */
 	property name="Guesses" setter="false";
 
 	/**
