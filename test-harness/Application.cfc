@@ -7,7 +7,7 @@ www.ortussolutions.com
 component{
 
 	// UPDATE THE NAME OF THE MODULE IN TESTING BELOW
-	request.MODULE_NAME = "pstrong";
+	request.MODULE_NAME = "passifier";
 
 	// Application properties
 	this.name              = hash( getCurrentTemplatePath() );

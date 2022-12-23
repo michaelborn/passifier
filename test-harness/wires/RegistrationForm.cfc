@@ -1,6 +1,6 @@
 component extends="cbwire.models.Component" {
 
-    property name="pStrong" inject="pstrong@pstrong";
+    property name="Passifier" inject="Passifier@passifier";
 
     // Data Properties
     data = {
@@ -12,7 +12,7 @@ component extends="cbwire.models.Component" {
     // Computed Properties
     computed = {
         "pstrength": function() {
-            return variables.pStrong.measure( data.password );
+            return variables.Passifier.measure( data.password );
         }
     };
 }

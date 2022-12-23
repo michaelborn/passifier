@@ -6,17 +6,17 @@
 component {
 
 	// Module Properties
-	this.title       = "pstrong";
+	this.title       = "passifier";
 	this.author      = "Ortus Solutions";
 	this.webURL      = "https://www.ortussolutions.com";
 	this.description = "Password strength checker for ColdBox";
 	this.version     = "@build.version@+@build.number@";
 
 	// Model Namespace
-	this.modelNamespace = "pstrong";
+	this.modelNamespace = "passifier";
 
 	// CF Mapping
-	this.cfmapping = "pstrong";
+	this.cfmapping = "passifier";
 
 	// Dependencies
 	this.dependencies = [ "cbjavaloader" ];

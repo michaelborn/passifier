@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  MODULE_ID: pstrong
+  MODULE_ID: passifier
   VERSION: 
 
 jobs:

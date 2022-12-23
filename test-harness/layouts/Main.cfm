@@ -7,7 +7,7 @@
 </head>
 <body class="p-0">
 	<header class="bg-green-800 p-8 mb-8 ">
-		<h1 class="text-3xl text-white">pStrong</h1>
+		<h1 class="text-3xl text-white">Passifier</h1>
 	</header>
 	<div class="container mx-auto">
 		#renderView()#

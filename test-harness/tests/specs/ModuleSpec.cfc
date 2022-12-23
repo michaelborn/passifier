@@ -14,7 +14,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="root" {
 	/*********************************** BDD SUITES ***********************************/
 
 	function run(){
-		describe( "pStrong Module", function(){
+		describe( "Passifier Module", function(){
 			beforeEach( function( currentSpec ){
 			} );
 		} );

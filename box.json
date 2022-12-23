@@ -1,17 +1,17 @@
 {
-    "name":"pstrong",
+    "name":"passifier",
     "version":"1.0.0",
     "location":"forgeboxStorage",
     "author":"Michael Born <michael@ortussolutions.com>",
-    "homepage":"https://github.com/michaelborn/pstrong",
-    "documentation":"https://github.com/michaelborn/pstrong",
+    "homepage":"https://github.com/michaelborn/passifier",
+    "documentation":"https://github.com/michaelborn/passifier",
     "repository":{
         "type":"git",
-        "url":"https://github.com/michaelborn/pstrong"
+        "url":"https://github.com/michaelborn/passifier"
     },
-    "bugs":"https://github.com/michaelborn/pstrong",
+    "bugs":"https://github.com/michaelborn/passifier",
     "shortDescription":"Description goes here",
-    "slug":"pstrong",
+    "slug":"passifier",
     "type":"modules",
     "keywords":"",
     "license":[
@@ -32,7 +32,7 @@
     },
     "ignore":[
         "**/.*",
-        "pstrong-demo.png",
+        "passifier-demo.png",
         "docs/",
         "test-harness",
         "/server*.json"

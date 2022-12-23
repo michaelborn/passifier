@@ -1,13 +1,13 @@
-# Pstrong
+# Passifier
 
 A password strength checker based on [zxcvbn4j](https://github.com/nulab/zxcvbn4j).
 
-![Demo of pStrong showing "Time to crack: Centuries" on a registration form password field](pstrong-demo.png)
+![Demo of Passifier showing "Time to crack: Centuries" on a registration form password field](passifier-demo.png)
 
 ## Installation
 
 ```bash
-box install pstrong
+box install passifier
 ```
 
 ## Configuration
@@ -16,10 +16,10 @@ No configuration as of yet. 😁
 
 ## Usage
 
-Use `pStrong.measure( password )` to measure password complexity:
+Use `Passifier.measure( password )` to measure password complexity:
 
 ```bash
-var strength = getInstance( "pStrong@pstrong" ).measure( "myBadPassword" );
+var strength = getInstance( "Passifier@passifier" ).measure( "myBadPassword" );
 ```
 
 You can then read complexity using a number of methods:
@@ -30,14 +30,14 @@ You can then read complexity using a number of methods:
 
 ### Feedback
 
-The Feedback object is acquired by running `pStrong.measure( "myBadPassword" ).getFeedback()`.
+The Feedback object is acquired by running `Passifier.measure( "myBadPassword" ).getFeedback()`.
 
 * `feedback.getWarning()`
 * `feedback.getSuggestions()`
 
 ### CrackTimeSeconds
 
-The CrackTimeSeconds object is acquired by running `pStrong.measure( "myBadPassword" ).getCrackTimeSeconds()`.
+The CrackTimeSeconds object is acquired by running `Passifier.measure( "myBadPassword" ).getCrackTimeSeconds()`.
 
 * `getOnlineThrottling100perHour()`
 * `getOnlineNoThrottling10perSecond()`
@@ -46,7 +46,7 @@ The CrackTimeSeconds object is acquired by running `pStrong.measure( "myBadPassw
 
 ### CrackTimeDisplay
 
-The CrackTimeDisplay object is acquired by running `pStrong.measure( "myBadPassword" ).getCrackTimeDisplay()`.
+The CrackTimeDisplay object is acquired by running `Passifier.measure( "myBadPassword" ).getCrackTimeDisplay()`.
 
 * `getOnlineThrottling100perHour()`
 * `getOnlineNoThrottling10perSecond()`

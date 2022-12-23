@@ -8,7 +8,7 @@ component
 	appMapping   ="root"
 	loadColdBox  =true
 	unloadColdBox=false
-	model        ="pstrong.models.pStrong"
+	model        ="passifier.models.Passifier"
 {
 
 	function beforeAll(){
@@ -27,13 +27,13 @@ component
 	}
 
 	function run(){
-		describe( "pStrong", function(){
+		describe( "Passifier", function(){
 			it( "can instantiate via wirebox", function(){
-				expect( getWirebox().getInstance( "pStrong@pstrong" ) ).toBeTypeOf( "component" );
+				expect( getWirebox().getInstance( "Passifier@passifier" ) ).toBeTypeOf( "component" );
 			} );
 			it( "can instantiate via hard path", function(){
 				// Just to ensure users can use this lib with a manual instantiation if they really need to.
-				expect( new pstrong.models.pStrong() ).toBeTypeOf( "component" );
+				expect( new passifier.models.Passifier() ).toBeTypeOf( "component" );
 			} );
 
 			it( "can measure password complexity", function(){
