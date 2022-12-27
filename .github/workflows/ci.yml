@@ -120,4 +120,4 @@ jobs:
       - name: Show Server Log On Failures
         if: ${{ failure() }}
         run: |
-          box cat `system-log`
+          box cat `box system-log`
