@@ -10,10 +10,10 @@
         "url":"https://github.com/michaelborn/passifier"
     },
     "bugs":"https://github.com/michaelborn/passifier",
-    "shortDescription":"Description goes here",
+    "shortDescription":"Password strength meter based on zxcvbn4j",
     "slug":"passifier",
     "type":"modules",
-    "keywords":"",
+    "keywords":"security,password,login",
     "license":[
         {
             "type":"Apache2",

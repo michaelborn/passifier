@@ -116,3 +116,8 @@ jobs:
           SLACK_TITLE: "${{ env.MODULE_ID }} Build"
           SLACK_USERNAME: CI
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Show Server Log On Failures
+        if: ${{ failure() }}
+        run: |
+          box server log serverConfigFile="server-${{ matrix.cfengine }}.json"
