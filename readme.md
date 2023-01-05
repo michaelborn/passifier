@@ -2,7 +2,7 @@
 
 A password strength checker based on [zxcvbn4j](https://github.com/nulab/zxcvbn4j).
 
-![Demo of Passifier showing "Time to crack: Centuries" on a registration form password field](https://github.com/michaelborn/passifier/blob/master/passifier-demo.png)
+![Demo of Passifier showing "Time to crack: Centuries" on a registration form password field](https://raw.githubusercontent.com/michaelborn/passifier/master/passifier-demo.png)
 
 ## Installation
 
